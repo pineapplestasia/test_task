@@ -259,12 +259,15 @@ public class PartialUpdatePostTest {
         var updatedTitle = "updated title " + Instant.now().toString();
         var updatedBody = "updated body " + Instant.now().toString();
 
-        PostsClient.partialUpdatePost(Map.of(
-                        "id", updatedPostId,
-                        "userId", updatedUserId,
-                        "title", updatedTitle,
-                        "body", updatedBody
-                ), postId)
+        PostsClient.partialUpdatePost(
+                        Map.of(
+                                "id", updatedPostId,
+                                "userId", updatedUserId,
+                                "title", updatedTitle,
+                                "body", updatedBody
+                        ),
+                        postId
+                )
                 .then()
                 .log().body()
                 .statusCode(HttpStatus.SC_OK)

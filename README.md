@@ -18,7 +18,13 @@
 ## Как запустить
 Запустить скрипт `runTest.sh`, либо выполнить слелующие команды:
 ```bash
+# Windows:
 ./gradlew.bat clean
 ./gradlew.bat allureReport --depends-on-tests
 ./gradlew.bat allureServe
+
+# Linux/MacOS:
+./gradlew clean
+./gradlew allureReport --depends-on-tests
+./gradlew allureServe
 ```
